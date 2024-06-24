@@ -54,7 +54,7 @@ aws ec2 delete-snapshot --snapshot-id snap-9876543210
 
 ## IAM Permissions
 
-For details on the minimum IAM permissions required to build the AMI, please see the
+For details on the minimum IAM permissions required to build the AMI, see the
 packer docs.
 
 ## License
