@@ -55,7 +55,7 @@ aws ec2 delete-snapshot --snapshot-id snap-9876543210
 ## IAM Permissions
 
 For details on the minimum IAM permissions required to build the AMI, please see the
-packer docs: [packer] (https://www.packer.io/docs/builders/amazon#iam-task-or-instance-role)
+packer docs: [packer](https://www.packer.io/docs/builders/amazon#iam-task-or-instance-role)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
