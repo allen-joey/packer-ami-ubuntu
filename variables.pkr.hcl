@@ -1,9 +1,13 @@
 # variables.pkr.hcl
 
 variable "instance_type" {
-  type = "t2.micro"
+  description = "AMI Size"
+  type        = string
+  default     = "t2.micro"
 }
 
 variable "aws_region" {
-  type = "eu-west-2"
+  description = "AWS Region"
+  type        = string
+  default     = "eu-west-2"
 }
