@@ -9,7 +9,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 // Checkout your source code repository
-                git credentialsId: '4ac937d1-5c44-436f-a6a1-fc4b40246718', url: 'https://git-codecommit.eu-west-2.amazonaws.com/v1/repos/Packer-AWS-Ubuntu-AMI'
+                git credentialsId: '', url: ''
 
             }
         }        
@@ -55,7 +55,7 @@ pipeline {
 
 post {
     always {
-        emailext subject: 'AWS Packer AMI Jenkins Results', body: 'results attached.', to: 'joey.allen@gmx.co.uk', attachLog: true        
+        emailext subject: 'AWS Packer AMI Jenkins Results', body: 'results attached.', to: '', attachLog: true        
                                 
         }
     }
