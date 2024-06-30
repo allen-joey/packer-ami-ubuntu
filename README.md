@@ -1,4 +1,4 @@
-# Repo: data-depot-03
+Repo: data-depot-03
 
 # Optimized Packer AMI Build
 
