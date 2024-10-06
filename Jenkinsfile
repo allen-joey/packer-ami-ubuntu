@@ -8,7 +8,7 @@ pipeline {
                 script {
                     // Validate your Packer template
                     dir("/var/lib/jenkins/workspace/packer-ami-ubuntu")
-                    sh 'packer validate packer-build-ub22-ami.pkr.hcl'
+                    sh '/usr/bin/packer validate packer-build-ub22-ami.pkr.hcl'
                 }
             }
         }
@@ -18,7 +18,7 @@ pipeline {
                 script {
                     // Execute the Packer build command
                     dir("/var/lib/jenkins/workspace/packer-ami-ubuntu")
-                    sh 'packer build packer-build-ub22-ami.pkr.hcl'
+                    sh '/usr/bin/packer build packer-build-ub22-ami.pkr.hcl'
                 }
             }
         }
