@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   stages {
-    stage('Packer - Build Ubuntu Image on vSphere') {
+    stage('Packer - Build Ubuntu Image on AWS') {
       steps {
         sh """
         #!/bin/bash
