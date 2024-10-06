@@ -1,4 +1,4 @@
-# aws-ubuntu.pkr.hcl. Builds latest Ubuntu AMI
+# Ubuntu jammy-22.04 AMI
 
 packer {
   required_plugins {
@@ -35,6 +35,8 @@ source "amazon-ebs" "ubuntu-ami" {
     "Created-by"  = "Packer"
   }
 }
+
+# build ubuntu AMI, run the latest updates.
 build {
   sources = ["source.amazon-ebs.ubuntu-ami"]
 
