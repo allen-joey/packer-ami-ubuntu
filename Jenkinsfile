@@ -1,4 +1,5 @@
 // This Jenkinsfile defines a declarative pipeline
+/* groovylint-disable-next-line CompileStatic */
 pipeline {
     // Specifies that this pipeline can run on any available agent
     agent any
@@ -17,8 +18,9 @@ pipeline {
         stage('Validate Packer Template') {
             steps {
                 script {
-                    // This command validates the Packer HCL (HashiCorp Configuration Language) template using the provided variable files.  Ensure these file names are correct for your setup.
-                    sh "packer validate packer-build-ub22-ami.pkr.hcl"
+                    /* groovylint-disable-next-line LineLength */
+                    // This command validates the Packer HCL (HashiCorp Configuration Language) template using the provided variable files.
+                    sh 'packer validate packer-build-ub22-ami.pkr.hcl'
                 }
             }
         }
@@ -26,6 +28,7 @@ pipeline {
         // This stage builds a image using Packer
         stage('Build Image') {
             when {
+                /* groovylint-disable-next-line LineLength */
                 // This condition ensures that this stage will only run if the previous 'Validate Packer Template' stage succeeded
                 expression { currentBuild.resultIsBetterOrEqualTo('SUCCESS') }
             }
@@ -34,9 +37,9 @@ pipeline {
                     // This command builds image using Packer with the provided variable files
                     // It will forcefully build the image even if it exists and will prompt for action on any errors
                     // Ensure these file names are correct for your setup
-                    sh "packer build packer-build-ub22-ami.pkr.hcl"
+                    sh 'packer build packer-build-ub22-ami.pkr.hcl'
                 }
             }
         }
     }
-}    
+}
