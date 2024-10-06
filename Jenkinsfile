@@ -18,13 +18,13 @@ pipeline {
             steps {
                 script {
                     // This command validates the Packer HCL (HashiCorp Configuration Language) template using the provided variable files.  Ensure these file names are correct for your setup.
-                    sh "packer validate packer-build-ub22-ami.pkr"
+                    sh "packer validate packer-build-ub22-ami.pkr.hcl"
                 }
             }
         }
 
         // This stage builds a image using Packer
-        stage('Build VMWare Image') {
+        stage('Build Image') {
             when {
                 // This condition ensures that this stage will only run if the previous 'Validate Packer Template' stage succeeded
                 expression { currentBuild.resultIsBetterOrEqualTo('SUCCESS') }
@@ -34,21 +34,8 @@ pipeline {
                     // This command builds image using Packer with the provided variable files
                     // It will forcefully build the image even if it exists and will prompt for action on any errors
                     // Ensure these file names are correct for your setup
-                    sh "packer build packer-build-ub22-ami.pkr"
+                    sh "packer build packer-build-ub22-ami.pkr.hcl"
                 }
             }
         }
-    }
-
-    // Defines actions to be executed after the stages, regardless of their outcome
-    post {
-        // This will always archive any .log files in the workspace, even if there are none
-        always {
-            archiveArtifacts artifacts: '**/*.log', allowEmptyArchive: true
-        }
-        // If any stage failed, this will print an error message
-        failure {
-            echo "The build failed. Please check the logs."
-        }
-    }
-}
+    }    
