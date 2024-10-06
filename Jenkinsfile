@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     // Validate your Packer template
-                    sh 'packer validate .'
+                    sh 'packer validate packer-build-ub22-ami.hcl'
                 }
             }
         }
@@ -44,7 +44,7 @@ pipeline {
             steps {
                 script {
                     // Execute the Packer build command
-                    sh 'packer build .'
+                    sh 'packer build packer-build-ub22-ami.hcl'
                 }
             }
         }
