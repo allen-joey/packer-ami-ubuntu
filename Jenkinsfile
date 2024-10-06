@@ -2,13 +2,6 @@
 pipeline {
     agent any
 
-    environment {
-        // Set AWS credentials as environment variables (or use AWS credentials plugin for Jenkins)
-        // AWS_REGION = 'eu-west-2'         // Replace with your preferred AWS region
-        // AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
-        // AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')        
-    }
-
     stages {      
         stage('Validate Packer Template') {
             steps {
