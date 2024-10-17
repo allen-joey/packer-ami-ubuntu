@@ -20,7 +20,7 @@ pipeline {
                 script {
                     /* groovylint-disable-next-line LineLength */
                     // This command validates the Packer HCL (HashiCorp Configuration Language) template using the provided variable files.
-                    sh 'packer validate packer-build-ub22-ami.pkr.hcl'
+                    sh 'packer validate builder.pkr.hcl'
                 }
             }
         }
@@ -37,9 +37,8 @@ pipeline {
                     // This command builds image using Packer with the provided variable files
                     // It will forcefully build the image even if it exists and will prompt for action on any errors
                     // Ensure these file names are correct for your setup
-                    sh 'packer build packer-build-ub22-ami.pkr.hcl'
+                    sh 'packer build builder.pkr.hcl'
+
                 }
             }
         }
-    }
-}
