@@ -1,5 +1,3 @@
-# Ubuntu jammy-22.04 AMI
-
 packer {
   required_plugins {
     amazon = {
@@ -33,17 +31,5 @@ source "amazon-ebs" "ubuntu-ami" {
     "OS_Version"  = "jammy-22.04"
     "Release"     = "Latest"
     "Created-by"  = "Packer"
-  }
-}
-
-# build ubuntu AMI, run the latest updates.
-build {
-  sources = ["source.amazon-ebs.ubuntu-ami"]
-
-  provisioner "shell" {
-    inline = [
-      "cloud-init status --wait",
-      "sudo apt-get update && sudo apt-get upgrade -y"
-    ]
   }
 }
