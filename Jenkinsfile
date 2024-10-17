@@ -1,5 +1,5 @@
 // This Jenkinsfile defines a declarative pipeline
-/* groovylint-disable-next-line CompileStatic */
+/* groovylint-disable-next-line CompileStatic, NglParseError */
 pipeline {
     // Specifies that this pipeline can run on any available agent
     agent any
@@ -38,7 +38,8 @@ pipeline {
                     // It will forcefully build the image even if it exists and will prompt for action on any errors
                     // Ensure these file names are correct for your setup
                     sh 'packer build builder.pkr.hcl'
-
                 }
             }
         }
+    }
+}
