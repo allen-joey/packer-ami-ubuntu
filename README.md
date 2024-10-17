@@ -1,4 +1,4 @@
-# Optimized Packer AMI Build
+# Optimized Packer Ubuntu AMI Build
 
 This is a [packer](https://packer.io) build for creating an optimized AMI.
 It will create a private Ubuntu Jammy-22.04 AMI in whatever account you are running it in.
