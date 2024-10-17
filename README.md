@@ -10,7 +10,6 @@ It will create a private Ubuntu Jammy-22.04 AMI in whatever account you are runn
    git clone https://github.com/allen-joey/packer-ami-ubuntu.git
    ```
 2. [Install Packer](https://www.packer.io/docs/install)
-3. [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 
 ## Instructions
 
