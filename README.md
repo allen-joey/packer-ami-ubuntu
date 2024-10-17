@@ -28,7 +28,7 @@ Optional, variables can be set in `./release.auto.pkrvars.hcl` or `./overrides.a
 The AMI is created using packer.
 
 1. Update the default values of base_ami, subnet_id (with internet access) and security_group_id (allow port 22 from local ip) in the variables.pkr.hcl to match the ones in your AWS account.
-3. cd into the packer folder in the cloned repository.
+3. cd into the project folder in the cloned repository.
 4. Run the following commands in order
     - packer init .
     - packer fmt .
