@@ -26,9 +26,8 @@ REGION = EU-WEST-2 (example)
 
 The AMI is created using packer.
 
-1. Update the default values of base_ami, subnet_id (with internet access) and security_group_id (allow port 22 from local ip) in the variables.pkr.hcl to match the ones in your AWS account.
-3. cd into the project folder in the cloned repository.
-4. Run the following commands in order
+1. cd into the project folder in the cloned repository.
+2. Run the following commands in order
     - packer init .
     - packer fmt .
     - packer validate . or packer-fmt-validate.sh script
@@ -36,7 +35,7 @@ The AMI is created using packer.
 
 This will provision the AMI in you AWS account.
 
-Now, you can use the AMI to launch an EC2 instance which will have the web application pre configured and ready to use.
+Now, you can use the AMI to launch an EC2 instance pre configured and ready to use.
 
 ## Configuration
 
