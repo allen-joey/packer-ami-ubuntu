@@ -5,6 +5,15 @@ Repo: data-depot-03
 This is a [packer](https://packer.io) build for creating an optimized AMI.
 It will create a private Ubuntu Jammy-22.04 AMI in whatever account you are running it in.
 
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/allen-joey/packer-ami-ubuntu.git
+   ```
+2. [Install Packer](https://www.packer.io/docs/install)
+3. [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+
 ## Instructions
 
 ```
@@ -15,13 +24,6 @@ Set the environment vaiables: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
 ```
 REGION = EU-WEST-2 (example)
 ```
-
-## Configuration
-
-All configuration variables are defined and documented
-in the file: `./variables.pkr.hcl`. This is also where some defaults are defined.
-
-Optional, variables can be set in `./release.auto.pkrvars.hcl` or `./overrides.auto.pkrvars.hcl`.
 
 ### Creating AMI
 
@@ -38,6 +40,13 @@ The AMI is created using packer.
 This will provision the AMI in you AWS account.
 
 Now, you can use the AMI to launch an EC2 instance which will have the web application pre configured and ready to use.
+
+## Configuration
+
+All configuration variables are defined and documented
+in the file: `./variables.pkr.hcl`. This is also where some defaults are defined.
+
+Optional, variables can be set in `./release.auto.pkrvars.hcl` or `./overrides.auto.pkrvars.hcl`.
 
 #### Overrides
 
